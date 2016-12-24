@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Ruby classes for values that change over time}
   spec.description   = %q{ScheduledValue allows you to create and store values which change over time based on a schedule.}
   spec.homepage      = "https://github.com/neinteractiveliterature/scheduled_value"
+  spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
