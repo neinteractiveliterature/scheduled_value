@@ -29,7 +29,7 @@ module ScheduledValue
     end
 
     def attributes=(attributes)
-      self.timespans = attributes.symbolize_keys[:timespans]
+      self.timespans = attributes[:timespans] || attributes['timespans']
     end
 
     def timespans=(timespan_values)
@@ -38,7 +38,9 @@ module ScheduledValue
       timespan_values.each do |timespan_value|
         timespan = case timespan_value
         when self.class.timespan_with_value_class then timespan_value
-        when Hash then self.class.timespan_with_value_class.new(timespan_value)
+        when Hash then
+          attributes = timespan_value.each_with_object({}) { |(key, value), hash| hash[key.to_sym] = value }
+          self.class.timespan_with_value_class.new(**attributes)
         end
 
         self << timespan if timespan
