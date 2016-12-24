@@ -1,6 +1,6 @@
 # ScheduledValue
 
-![Codeship test status](https://codeship.com/projects/165d5000-ac28-0134-2a75-16abc9b20ebe/status?branch=master)
+[![Gem Version](https://badge.fury.io/rb/scheduled_value.svg)](https://badge.fury.io/rb/scheduled_value) ![Codeship test status](https://codeship.com/projects/165d5000-ac28-0134-2a75-16abc9b20ebe/status?branch=master)
 
 ScheduledValue provides a set of Ruby classes for representing values that change over time based on a schedule.  One way to think about this is that for a regular variable, you could reasonably ask "what is its value?"  For a ScheduledValue, you have to ask "what is its value *right now*?"  Some examples of this might be:
 
