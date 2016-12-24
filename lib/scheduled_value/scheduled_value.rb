@@ -11,6 +11,13 @@ module ScheduledValue
       self.new(timespans: [timespan])
     end
 
+    def from_json(json, include_root = false)
+      hash = JSON.parse(json)
+      hash = hash.values.first if include_root
+      self.attributes = hash
+      self
+    end
+
     def initialize(timespans: [])
       self.timespans = timespans
     end
