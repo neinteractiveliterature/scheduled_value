@@ -56,4 +56,9 @@ describe ScheduledValue::ScheduledValue do
       scheduled_value.value_at(Date.new(2015, month, 28)).must_equal month
     end
   end
+
+  it "determines when it does and doesn't have a value" do
+    scheduled_value.has_value_at?(Date.new(2014, 12, 1)).must_equal false
+    scheduled_value.has_value_at?(Date.new(2015, 1, 1)).must_equal true
+  end
 end

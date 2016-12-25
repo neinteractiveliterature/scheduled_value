@@ -64,6 +64,10 @@ module ScheduledValue
       value
     end
 
+    def has_value_at?(timestamp)
+      !!(timespan_containing(timestamp))
+    end
+
     def value_at(timestamp)
       timespan = timespan_containing(timestamp)
       raise "No timespan found for #{timestamp}" unless timespan
