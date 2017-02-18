@@ -84,6 +84,8 @@ module ScheduledValue
 
     def covers_all_time?
       timespans_array = timespans.to_a
+      return false if timespans_array.empty?
+
       !timespans_array.first.start && !timespans_array.last.finish
     end
 
