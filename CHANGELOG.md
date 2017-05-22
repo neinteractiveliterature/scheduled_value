@@ -1,3 +1,7 @@
+# 1.1.2 - May 22, 2017
+
+* Bug fix: use setters in initializers so that custom conversions will work when deserializing ScheduledValues
+
 # 1.1.1 - February 18, 2017
 
 * `ScheduledValue::ScheduledValue#covers_all_time?` will no longer raise an exception if there are no timespans

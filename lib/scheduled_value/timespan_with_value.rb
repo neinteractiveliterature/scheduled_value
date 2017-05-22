@@ -4,7 +4,7 @@ module ScheduledValue
 
     def initialize(start: nil, finish: nil, value: nil)
       super(start: start, finish: finish)
-      @value = value
+      self.value = value
     end
 
     def attributes

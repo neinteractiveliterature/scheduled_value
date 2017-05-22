@@ -4,8 +4,8 @@ module ScheduledValue
     attr_accessor :start, :finish
 
     def initialize(start: nil, finish: nil)
-      @start = start
-      @finish = finish
+      self.start = start
+      self.finish = finish
 
       raise "Finish must be after start" if start && finish && start >= finish
     end
