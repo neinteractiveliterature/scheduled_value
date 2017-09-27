@@ -1,3 +1,7 @@
+# 1.1.3 - September 27, 2017
+
+* Don't assume 'date' and 'time' are already required by the time we require 'scheduled_value/timespan'
+
 # 1.1.2 - May 22, 2017
 
 * Bug fix: use setters in initializers so that custom conversions will work when deserializing ScheduledValues
