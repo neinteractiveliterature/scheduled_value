@@ -1,3 +1,6 @@
+require 'date'
+require 'time'
+
 module ScheduledValue
   class Timespan
     include Comparable
