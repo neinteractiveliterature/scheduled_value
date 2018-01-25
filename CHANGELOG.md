@@ -1,3 +1,7 @@
+# 1.2.0 - January 25, 2018
+
+* Allow passing timezone argument to string formatting methods in Timespan
+
 # 1.1.3 - September 27, 2017
 
 * Don't assume 'date' and 'time' are already required by the time we require 'scheduled_value/timespan'
