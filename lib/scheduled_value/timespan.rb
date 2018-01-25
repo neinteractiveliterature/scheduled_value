@@ -4,7 +4,7 @@ require 'time'
 module ScheduledValue
   class Timespan
     include Comparable
-    attr_accessor :start, :finish
+    attr_reader :start, :finish
 
     def initialize(start: nil, finish: nil)
       self.start = start
@@ -53,21 +53,23 @@ module ScheduledValue
       "#<#{self.class.name}: #{self}>"
     end
 
-    def to_s(format = nil)
-      "#{start_description(format)} #{finish_description(format)}"
+    def to_s(format = nil, timezone = nil)
+      "#{start_description(format, timezone)} #{finish_description(format, timezone)}"
     end
 
-    def start_description(format = nil)
+    def start_description(format = nil, timezone = nil)
       if start
-        "from #{start.to_s(format)}"
+        start_in_zone = timezone ? start.in_time_zone(timezone) : start
+        "from #{start_in_zone.to_s(format)}"
       else
         'anytime'
       end
     end
 
-    def finish_description(format = nil)
+    def finish_description(format = nil, timezone = nil)
       if finish
-        "up to #{finish.to_s(format)}"
+        finish_in_zone = timezone ? start.in_time_zone(timezone) : start
+        "up to #{finish_in_zone.to_s(format)}"
       elsif start
         "indefinitely"
       end

@@ -11,7 +11,7 @@ module ScheduledValue
       super.merge(value: value)
     end
 
-    def to_s(format = nil)
+    def to_s(format = nil, timezone = nil)
       "#{value} #{super}"
     end
   end
