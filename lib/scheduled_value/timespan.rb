@@ -68,7 +68,7 @@ module ScheduledValue
 
     def finish_description(format = nil, timezone = nil)
       if finish
-        finish_in_zone = timezone ? start.in_time_zone(timezone) : start
+        finish_in_zone = timezone ? finish.in_time_zone(timezone) : start
         "up to #{finish_in_zone.to_s(format)}"
       elsif start
         "indefinitely"

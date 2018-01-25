@@ -1,4 +1,8 @@
-# 1.2.0 - January 25, 2018
+# 1.2.1 - January 25, 2018
+
+* Fix a major bug when formatting timespans with timezones
+
+# 1.2.0 - YANKED - January 25, 2018
 
 * Allow passing timezone argument to string formatting methods in Timespan
 
