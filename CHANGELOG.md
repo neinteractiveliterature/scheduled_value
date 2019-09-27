@@ -1,3 +1,8 @@
+# 1.2.2 - January 17, 2019
+
+* Fix a formatting bug where the start time could be accidentally used
+  as the finish time if there is no timezone
+
 # 1.2.1 - January 25, 2018
 
 * Fix a major bug when formatting timespans with timezones
