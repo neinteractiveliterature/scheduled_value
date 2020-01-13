@@ -51,14 +51,14 @@ describe ScheduledValue::ScheduledValue do
 
   it "returns the correct value for each timespan" do
     (1..10).each do |month|
-      scheduled_value.value_at(Date.new(2015, month, 1)).must_equal month
-      scheduled_value.value_at(Date.new(2015, month, 2)).must_equal month
-      scheduled_value.value_at(Date.new(2015, month, 28)).must_equal month
+      assert_equal month, scheduled_value.value_at(Date.new(2015, month, 1))
+      assert_equal month, scheduled_value.value_at(Date.new(2015, month, 2))
+      assert_equal month, scheduled_value.value_at(Date.new(2015, month, 28))
     end
   end
 
   it "determines when it does and doesn't have a value" do
-    scheduled_value.has_value_at?(Date.new(2014, 12, 1)).must_equal false
-    scheduled_value.has_value_at?(Date.new(2015, 1, 1)).must_equal true
+    assert_equal false, scheduled_value.has_value_at?(Date.new(2014, 12, 1))
+    assert_equal true, scheduled_value.has_value_at?(Date.new(2015, 1, 1))
   end
 end

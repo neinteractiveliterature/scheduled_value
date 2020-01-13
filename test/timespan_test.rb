@@ -8,14 +8,14 @@ describe ScheduledValue::Timespan do
   let(:postfinish) { finish + 1 }
 
   it "can be initialized with a start or a finish" do
-    ScheduledValue::Timespan.new(start: start).start.must_equal start
-    ScheduledValue::Timespan.new(finish: finish).finish.must_equal finish
+    assert_equal start, ScheduledValue::Timespan.new(start: start).start
+    assert_equal finish, ScheduledValue::Timespan.new(finish: finish).finish
   end
 
   it "can be initialized with both a start and a finish" do
     both = ScheduledValue::Timespan.new(start: start, finish: finish)
-    both.start.must_equal start
-    both.finish.must_equal finish
+    assert_equal start, both.start
+    assert_equal finish, both.finish
   end
 
   it "can be initialized without either a start or a finish" do
@@ -109,7 +109,7 @@ describe ScheduledValue::Timespan do
     let(:timespan) { ScheduledValue::Timespan.new(start: start, finish: finish) }
 
     it "can't be compared to dates within the timespan" do
-      (timespan <=> midway).must_be_nil
+      assert_nil(timespan <=> midway)
     end
 
     it "is less than dates after the timespan" do
@@ -129,8 +129,8 @@ describe ScheduledValue::Timespan do
     end
 
     it "can't be compared to overlapping but unequal timespans" do
-      (timespan <=> ScheduledValue::Timespan.new(start: prestart, finish: midway)).must_be_nil
-      (timespan <=> ScheduledValue::Timespan.new(start: midway, finish: postfinish)).must_be_nil
+      assert_nil(timespan <=> ScheduledValue::Timespan.new(start: prestart, finish: midway))
+      assert_nil(timespan <=> ScheduledValue::Timespan.new(start: midway, finish: postfinish))
     end
 
     it "is less than fully-after timespans" do
