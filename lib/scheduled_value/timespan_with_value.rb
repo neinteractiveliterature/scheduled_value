@@ -11,6 +11,10 @@ module ScheduledValue
       super.merge(value: value)
     end
 
+    def to_hash(*)
+      attributes
+    end
+
     def to_s(format = nil, timezone = nil)
       "#{value} #{super}"
     end

@@ -1,3 +1,8 @@
+# 1.3.0 - March 28, 2020
+
+* Implement #to_hash as an alias for #attributes on all objects, to make ActiveSupport serialization
+  behave better
+
 # 1.2.2 - January 17, 2019
 
 * Fix a formatting bug where the start time could be accidentally used

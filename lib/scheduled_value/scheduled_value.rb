@@ -28,6 +28,10 @@ module ScheduledValue
       }
     end
 
+    def to_hash(*)
+      attributes
+    end
+
     def attributes=(attributes)
       self.timespans = attributes[:timespans] || attributes['timespans']
     end

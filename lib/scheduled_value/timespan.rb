@@ -20,6 +20,10 @@ module ScheduledValue
       }
     end
 
+    def to_hash(*)
+      attributes
+    end
+
     def start=(value)
       @start = convert_time_value(value)
     end
