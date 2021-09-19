@@ -1,3 +1,5 @@
+require 'sorted_set'
+
 module ScheduledValue
   class ScheduledValue
     attr_reader :timespans
